@@ -28,6 +28,8 @@ def initialize_config(config_file):
         print(f'Config file already exists at {config_file}')
 
 def fetch_website_data(url, proxies, user_agent):
+    # TODO: Add cookies key to config but need to assure secure storage
+
     # Random delay to simulate human behavior
     time.sleep(random.uniform(1, 3))
     
