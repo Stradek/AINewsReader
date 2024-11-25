@@ -173,7 +173,7 @@ def main():
     print(f'URLs found: {urls}')
 
     # Initialize the Vertex AI client
-    vertexai.init(project=project_id, location=location)
+    # vertexai.init(project=project_id, location=location)
 
     # Define the GenerativeModel
     # model = GenerativeModel(model_id)
