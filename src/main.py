@@ -60,13 +60,15 @@ def fetch_website_data(url, proxies, user_agent):
 
     except requests.exceptions.HTTPError as e:
         print(f"HTTP Error fetching {url}: {e}")
-        return None
+
     except requests.exceptions.RequestException as e:
         print(f"Request Error fetching {url}: {e}")
-        return None
+
     except Exception as e:
         print(f"Unexpected Error fetching {url}: {e}")
-        return None
+
+    print()
+    return None
 
 def extract_news_content(html_content):
     soup = BeautifulSoup(html_content, 'html.parser')
@@ -192,6 +194,7 @@ def main():
         data = fetch_website_data(url, config['proxies'], user_agent)
         if data:
             print(f"Data from {url}: {data[:100]}...")  # Print the first 100 characters of the data
+            print()
 
         url_to_website_data[url] = data
 
